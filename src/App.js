@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+function Food({ fav }) {
+  return <h1>I like {fav}</h1>;
+}
+
+const foodILike = [
+  {
+    name: 'Pasta'
+    image: 'https://recipe1.ezmember.co.kr/cache/recipe/2018/12/14/2e5a56658f3abe62fa741b2958e3354e1.jpg',
+  },
+  {
+    name: 'Samgyeopsal'
+    image: 'https://cdn.crowdpic.net/list-thumb/thumb_l_AB0566EA909B44D840ACC8520191F53B.jpg',
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>어서오세요.</h1>
     </div>
   );
 }
