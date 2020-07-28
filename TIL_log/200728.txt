@@ -3,3 +3,9 @@
     (역시 뭔가 오랜만에 하면 다 새로워....)
 3. react.js - npm start, Ctrl+C로 종료 및 local repository와의 연동 완료
 4. VSCode - Ctrl + Shift + ` (통합 terminal 실행)
+5. 컴포넌트(함수)에 객체로 변환한 데이터 전달(props).
+만들어낸 결과물 index.html로 출력하는 방법 익힘
+
++ 현재 app.js에서 {}사이 , 기호 때문에 오류가 난 것 같은데,
+내일 다시 확인해야 할듯.
+코드 내용 중에 오타는 없는데....
