@@ -1,0 +1,5 @@
+1. VSCode, react.js 설치
+2. cmd를 통한 git init, commit, push origin master 등
+    (역시 뭔가 오랜만에 하면 다 새로워....)
+3. react.js - npm start, Ctrl+C로 종료 및 local repository와의 연동 완료
+4. VSCode - Ctrl + Shift + ` (통합 terminal 실행)
