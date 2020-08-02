@@ -1,2 +1,59 @@
 <전반적인 영화 앱 수정 과정 시작!>
 1. 노마드 코더 영화 API, "genres" 키 -> Movies 컴포넌트에 genres props 넘겨주기
+-> Movie.js - function Movie({})에 , genres 추가
+-> Movie.propTypes = {}에 genres: PropTypes.arrayOf(PropTypes.string).isRequired, } 추가
+-> App. js - Movie ... poster 하단에 genres={movie.genres} 추가
+
+2. 코드 내의 JSX class 속성 이름 -> className으로 변경
+-> App.js 및 Movie.js 내에서의 "class" -> "className"으로 수정
+
+3. 영화 장르 출력하기 + unique "key" prop 추가를 위해 
+genre 외에도 index(배열 원소의 숫자 표시) 속성을 map 함수에 넣어주기
+-> <h5 classname...> 하단에
+ <ul className="movie__genres">
+  {genres.map((genre, index) => {
+                return (
+                <li key={index} className="movie__genre">
+                  {genre}
+                </li>
+                );
+              })}
+            </ul>
+(li 엘리먼트에 key={index}를 추가하여 각각 표로 출력되는 데이터에 원소 숫자가 들어가 있도록 지정)
+
+4. App.css, Movie.css를 수정하여 디자인 적용
+
+5. summary 내의 글자수가 너무 많음 -> 180자로 제한해보자
+-> movie.js 내에서 <p className="movie__summary">{summary.slice(0, 180)}...</p>
+-> 180자 커트 + 이후 글자 "..."도 같이 삽입함
+
+6. index.html에서 title 부분 수정
+
+7. 페이지 내에 내비게이션 기능을 추가하기 with react-router-dom
+-> cmd > npm install react-router-dom
+-> src 디렉토리 하위에 components 폴더 생성, Movie.css, Movie.js 이동
+-> src 디렉토리 하위에 routes 폴더 생성
+
+8. 복사된 일부 파일 수정
+-> ./src/routes/Home.js -> import Movie from '../components/Movie';, import './Home.css';, class Home extends React.Component
+ & export default Home;
+
+9. ./src/routes/Home.css 생성하여 디자인 요소 삽입
+
+10. App.js의 내용 수정
+-> import Home from './routes/Home';
+ function App() {
+  return <Home />;
+ }
+
+11. HashRouter 및 Route 컴포넌트 사용하기
+(임포트한 후 HashRouter 컴포넌트가 Route 컴포넌트를 감싸 반환하도록 App.js 수정하기)
+-> 위의 import Home... 삭제 후 import './App.css' 하단에 import { HashRouter, Route } from 'react-router-dom';
+->  return (
+    <HashRouter>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+    </HashRouter>
+  );
+
+(수정이 다 된 상태의 코드를 작성하였으며, 4일 다시 추가 예정입니다!)
