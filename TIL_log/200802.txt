@@ -1,0 +1,2 @@
+<전반적인 영화 앱 수정 과정 시작!>
+1. 노마드 코더 영화 API, "genres" 키 -> Movies 컴포넌트에 genres props 넘겨주기
