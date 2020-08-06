@@ -1,0 +1,28 @@
+1. (2일 하던거에 이어서) Route 컴포넌트에 path, component props 추가, About.js 내용 추가하여 출력될 내용 기재
+
+2. 설정된 라우터 테스트 ex. localhost:3000/#/about
+
+3. Home component를 위한 Routh 컴포넌트 추가
+import Home from './routes/Home'; 부분과 Hashrouther 아래의 <Route path="/" component={Home} />는,
+기본 접속 페이지 내에서 보여줄 부분이 Home 컴포넌트이기 때문에 기본으로 설정
+
+4. 라우터 테스트
+- localhost:3000/#/home
+- localhost:3000/#/home/introduction
+- localhost:3000/#/about
+이 출력될 것으로 설정했는데, 막상 localhost:3000/#/home/introduction 로 들어가면 "Home" "Introduction"임. ㄱ-?
+-> 라우터가 URL을 찾는 방식이 거슬러 내려가기 때문임. (다행히 about 아래에는 /과 about밖에 없었던 것 뿐..)
+=> 이럴 경우 상단의 routh path 부분의 코드를 <Route path="/" exact={true} component={Home} />로 수정하여, 
+완전히 같은 path props에서만 URL이 출력될 수 있도록 함
+(..음? 링크로 들어가봤는데 왜 아무것도 안뜨지? 기분탓이겠지 ^^)
+
+5. About.css에 이쁜 내용 추가(명언이 생각 안나서 베껴씀...ㅎㅎ)
+
+6. Navigation.js로 Home, About 페이지로의 하이퍼링크 추가 + App.js 컴포넌트에 집어넣기
+- import Navigation from './components/Navigation';
+- & <Hashrouter> 아래의 <Navigation />
+=> 얼레? 버튼이 생기긴 했는데 왜이렇게 느리게 열리지...? => 하이퍼링크가 통째로 고치게 만들어서
+==> react-router-dom의 Link 컴포넌트 사용으로 해결합시다. a href를 Link to와 </Link>로 고침.
+겁나 빠르잖아~
+
+7. 
