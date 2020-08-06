@@ -2,7 +2,7 @@
 
 2. 설정된 라우터 테스트 ex. localhost:3000/#/about
 
-3. Home component를 위한 Routh 컴포넌트 추가
+3. Home component를 위한 Route 컴포넌트 추가
 import Home from './routes/Home'; 부분과 Hashrouther 아래의 <Route path="/" component={Home} />는,
 기본 접속 페이지 내에서 보여줄 부분이 Home 컴포넌트이기 때문에 기본으로 설정
 
@@ -25,4 +25,3 @@ import Home from './routes/Home'; 부분과 Hashrouther 아래의 <Route path="/
 ==> react-router-dom의 Link 컴포넌트 사용으로 해결합시다. a href를 Link to와 </Link>로 고침.
 겁나 빠르잖아~
 
-7. 
