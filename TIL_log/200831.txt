@@ -2,3 +2,21 @@
 은(는) 사실 한 달 만의 복습이라 진도 나가는거고 뭐고 정신이 없음...
 일단 책은 다시 다 읽었고
 
+1. console 내의 history 값 - push, go, goBack, goforward 등의 키 확인. -> push() 함수 사용 예정
+-> componentDidMount() 생명주기 함수를 사용, Detail 컴포넌트가 마운트 될때 push() 함수 실행
+
+2. Detail 컴포넌트 클래스 형태 -> 컴포넌트로 변경 & location, history 키 구조 분해 할당하기
+
+3. push()함수 사용 -> detail 컴포넌트 마운트 시 구조분해 할당으로 인해 location 및 history를 얻게 됨
+* location.state가 없는 경우 Home으로 이동시킴
+
+4. movie_detail 입력 시 영화 제목 출력되도록 세팅하기(const {location}, location.state.title... )
+
+5. movie_detail로의 리다이렉팅이 현재 불가능함(이전에 배웠던 render() -> componentDidMount() 순서 때문) 
+render() 함수 내에서 location.state.title을 사용하려 하지만, location.state가 undefined라서 사용할 수 없음.
+-> render() 함수에도 componentDidMount() 생명주기 함수에 작성했던 리다이렉트 코드 추가
+=> if문, location.state가 확인될 경우 영화 제목 출력, 확인되지 않을 경우 return null;
+
+6. package.json 파일 수정, 최종 파일 깃허브 업로드, gh-pages 설치 및 npm run deploy
+
+7. 생각보다 페이지 레이아웃이 너무 무식(?)거창한 것 같아서 아기자기하게 편집할 방법을 구상하는 중...
